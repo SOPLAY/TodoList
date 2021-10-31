@@ -6,6 +6,6 @@ export type TodoList = {
 };
 export const todoListState = atom<TodoList[]>({
   key: "todolistAtoms",
-  default: [{ id: 1, value: "TodoList 작성!", state: true }],
+  default: [{ id: 1, state: true, value: "TodoList 작성!" }],
 });
 export const todoId = atom<number>({ key: "todoId", default: 2 });

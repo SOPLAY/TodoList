@@ -36,6 +36,7 @@ const PlusBtn = styled.button`
   text-align: center;
   justify-content: center;
   border: none;
+  transition: 0.25s;
   &:hover {
     background-color: #339af0;
   }
@@ -66,6 +67,9 @@ export const TodoInput = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="할 일을 입력해주세요!"
+        onKeyPress={(e) => {
+          if (e.key === "Enter") onClick();
+        }}
       />
       <PlusBtn onClick={onClick}>
         <img src={Plus} alt="+" />

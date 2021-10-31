@@ -10,13 +10,14 @@ const Block = styled.div`
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   padding: 40px 50px;
   box-sizing: border-box;
+  overflow: auto;
 `;
 export const TodoLists = () => {
   const todos = useRecoilValue(todoListState);
   return (
     <Block>
       {todos.map((v) => (
-        <TodoItem id={v.id} value={v.value} state={v.state} />
+        <TodoItem key={v.id} id={v.id} value={v.value} state={v.state} />
       ))}
     </Block>
   );
