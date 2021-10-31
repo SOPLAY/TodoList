@@ -1,5 +1,6 @@
 import styled, { StyledComponent } from "styled-components";
 import { TodoInput } from "./components/TodoInput";
+import { TodoLists } from "./components/TodoLists";
 import { TodoTitle } from "./components/TodoTitle";
 const BodyFrame: StyledComponent<"div", any> = styled.div`
   //background-color: lightgray;
@@ -13,6 +14,7 @@ function App() {
     <BodyFrame>
       <TodoTitle />
       <TodoInput />
+      <TodoLists />
     </BodyFrame>
   );
 }
