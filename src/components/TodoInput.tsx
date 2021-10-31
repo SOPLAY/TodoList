@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { todoId, TodoList, todoListState } from "../atoms/TodoListAtom";
 import Plus from "../icon/plus-solid.svg";
@@ -18,7 +18,11 @@ const Input = styled.input`
   width: 400px;
   height: 40px;
   margin-left: 50px;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
+  border: none;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const PlusBtn = styled.button`
@@ -45,13 +49,16 @@ export const TodoInput = () => {
   const [todos, setTodos] = useRecoilState(todoListState);
   const [idTodos, setIdTodos] = useRecoilState(todoId);
   const onClick = (): void => {
-    const todo: TodoList = {
-      id: idTodos,
-      state: true,
-      value: input,
-    };
-    setIdTodos(idTodos + 1);
-    setTodos([...todos, todo]);
+    if (input) {
+      const todo: TodoList = {
+        id: idTodos,
+        state: true,
+        value: input,
+      };
+      setIdTodos(idTodos + 1);
+      setTodos([...todos, todo]);
+      setInput("");
+    }
   };
   return (
     <Box>
