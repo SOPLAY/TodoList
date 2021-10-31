@@ -1,13 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./css/reset.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
-
+import styled from "styled-components";
+const BodyBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e7f5ff;
+`;
 ReactDOM.render(
   <RecoilRoot>
-    <App />
+    <BodyBackground>
+      <App />
+    </BodyBackground>
   </RecoilRoot>,
   document.getElementById("root")
 );
