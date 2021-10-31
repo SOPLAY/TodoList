@@ -1,6 +1,5 @@
 import styled from "styled-components";
 const Title = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
   display: flex;
   background-color: #4dabf7;
   min-width: 600px;
@@ -19,6 +18,6 @@ const Title = styled.div`
   margin-bottom: 20px;
 `;
 
-export const TodoTitle = () => {
+export function TodoTitle() {
   return <Title>Todo list</Title>;
-};
+}
