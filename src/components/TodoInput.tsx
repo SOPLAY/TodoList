@@ -2,12 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import {
-  saveTodos,
-  todoId,
-  TodoList,
-  todoListState,
-} from "../atoms/TodoListAtom";
+import { todoId, TodoList, todoListState } from "../atoms/TodoListAtom";
+import { saveTodos } from "../atoms/SaveTodoList";
 import Plus from "../icon/plus-solid.svg";
 
 const Box = styled.div`

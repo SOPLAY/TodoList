@@ -1,16 +1,11 @@
 import { atom } from "recoil";
+import { localState } from "./SaveTodoList";
 
 export type TodoList = {
   id: number;
   value: string;
   state: boolean;
 };
-
-export const saveTodos = (todosAtomData?: TodoList[]) => {
-  localStorage.setItem("todos", JSON.stringify(todosAtomData));
-};
-
-const localState = JSON.parse(localStorage.getItem("todos") || "0");
 
 const initialTodo: TodoList[] = [
   { id: 1, state: true, value: "TodoList 작성!" },
