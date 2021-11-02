@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { todoId, TodoList, todoListState } from "../atoms/TodoListAtom";
+import {
+  saveTodos,
+  todoId,
+  TodoList,
+  todoListState,
+} from "../atoms/TodoListAtom";
 import Plus from "../icon/plus-solid.svg";
 
 const Box = styled.div`
@@ -44,7 +49,6 @@ const PlusBtn = styled.button`
     background-color: #1971c2;
   }
 `;
-
 export const TodoInput = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useRecoilState(todoListState);
@@ -61,6 +65,7 @@ export const TodoInput = () => {
       setInput("");
     }
   };
+
   return (
     <Box>
       <Input
@@ -74,6 +79,7 @@ export const TodoInput = () => {
       <PlusBtn onClick={onClick}>
         <img src={Plus} alt="+" />
       </PlusBtn>
+      {saveTodos(todos)}
     </Box>
   );
 };
