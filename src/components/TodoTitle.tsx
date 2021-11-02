@@ -18,6 +18,6 @@ const Title = styled.div`
   margin-bottom: 20px;
 `;
 
-export function TodoTitle() {
+export default function TodoTitle() {
   return <Title>Todo list</Title>;
 }

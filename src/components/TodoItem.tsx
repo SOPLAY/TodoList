@@ -1,6 +1,7 @@
+import React from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { TodoList, todoListState } from "../atoms/TodoListAtom";
+import { todoListState } from "../atoms/TodoListAtom";
 import check from "../icon/check-solid.svg";
 import checkAct from "../icon/check-solid-act.svg";
 import trash from "../icon/trash-alt-solid.svg";
@@ -49,7 +50,9 @@ const Value = styled.div`
 const CheckDiv = styled.div`
   display: flex;
 `;
-export const TodoItem = ({ id, value, state }: TodoList) => {
+type TodoList = { id: number; value: string; state: boolean };
+const TodoItem = (v: TodoList) => {
+  const { id, value, state } = v;
   const [todos, setTodos] = useRecoilState(todoListState);
   const deletTodoItems = (id: number): void => {
     setTodos(todos.filter((v) => v.id !== id));
@@ -68,3 +71,4 @@ export const TodoItem = ({ id, value, state }: TodoList) => {
     </Todo>
   );
 };
+export default React.memo(TodoItem);

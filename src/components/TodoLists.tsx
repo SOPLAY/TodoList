@@ -1,7 +1,8 @@
+import React from "react";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { todoListState } from "../atoms/TodoListAtom";
-import { TodoItem } from "./TodoItem";
+import TodoItem from "./TodoItem";
 const Block = styled.div`
   margin-top: 20px;
   width: 600px;
@@ -12,7 +13,7 @@ const Block = styled.div`
   box-sizing: border-box;
   overflow: auto;
 `;
-export const TodoLists = () => {
+const TodoLists = () => {
   const todos = useRecoilValue(todoListState);
   return (
     <Block>
@@ -22,3 +23,5 @@ export const TodoLists = () => {
     </Block>
   );
 };
+
+export default React.memo(TodoLists);

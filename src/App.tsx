@@ -1,8 +1,7 @@
 import styled, { StyledComponent } from "styled-components";
-import { saveTodos } from "./atoms/TodoListAtom";
-import { TodoInput } from "./components/TodoInput";
-import { TodoLists } from "./components/TodoLists";
-import { TodoTitle } from "./components/TodoTitle";
+import TodoInput from "./components/TodoInput";
+import TodoLists from "./components/TodoLists";
+import TodoTitle from "./components/TodoTitle";
 const BodyFrame: StyledComponent<"div", any> = styled.div`
   width: 600px;
   height: 700px;

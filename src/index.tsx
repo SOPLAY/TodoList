@@ -13,11 +13,13 @@ const BodyBackground = styled.div`
   background: #e7f5ff;
 `;
 ReactDOM.render(
-  <RecoilRoot>
-    <BodyBackground>
-      <App />
-    </BodyBackground>
-  </RecoilRoot>,
+  <React.StrictMode>
+    <RecoilRoot>
+      <BodyBackground>
+        <App />
+      </BodyBackground>
+    </RecoilRoot>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

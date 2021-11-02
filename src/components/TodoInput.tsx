@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
@@ -49,7 +50,7 @@ const PlusBtn = styled.button`
     background-color: #1971c2;
   }
 `;
-export const TodoInput = () => {
+const TodoInput = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useRecoilState(todoListState);
   const [idTodos, setIdTodos] = useRecoilState(todoId);
@@ -83,3 +84,4 @@ export const TodoInput = () => {
     </Box>
   );
 };
+export default React.memo(TodoInput);
